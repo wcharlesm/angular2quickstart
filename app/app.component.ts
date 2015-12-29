@@ -1,9 +1,5 @@
 import {Component} from 'angular2/core';
-
-interface Hero{
-	id: number;
-	name: string;
-}
+import {Hero} from './hero';
 
 @Component({
 	selector: 'my-app',
@@ -54,7 +50,7 @@ interface Hero{
 			margin-right: .8em;
 			border-radius: 4px 0px 0px 4px;
 		}
-	`]
+	`],
 	template: `
 		<h1>{{title}}</h1>
 		<h2>My Heroes</h2>
@@ -65,14 +61,6 @@ interface Hero{
 				<span class="badge">{{hero.id}}</span> {{hero.name}}
 			<li>
 		</ul>
-		<div *ngIf="selectedHero">
-			<h2>{{selectedHero.name}} details!</h2>
-			<div><label>id: </label>{{selectedHero.id}}</div>
-			<div>
-				<label>name: </label>
-				<div><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
-			</div>
-		</div>
 		`
 })
 
